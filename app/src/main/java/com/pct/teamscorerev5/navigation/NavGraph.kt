@@ -5,6 +5,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import com.pct.teamscorerev5.ui.screens.coursedetail.CourseDetailScreen
+import com.pct.teamscorerev5.ui.screens.courses.CoursesScreen
+import com.pct.teamscorerev5.ui.screens.playersetup.PlayersScreen
+import com.pct.teamscorerev5.ui.screens.scorecard.ScoreCardScreen
+import com.pct.teamscorerev5.ui.screens.summary.SummaryScreen
 import kotlinx.serialization.Serializable
 import androidx.navigation.compose.rememberNavController as rememberNavController1
 
@@ -12,29 +17,43 @@ import androidx.navigation.compose.rememberNavController as rememberNavControlle
 @Composable
 fun MyNav(){
     val navController = rememberNavController1()
-    NavHost(navController = navController, startDestination = Home ) {
-        composable<Home>{
-            HomeScreen(navController)
+    NavHost(
+        navController = navController,
+        startDestination = Summary
+    ) {
+        composable<Summary>{
+            SummaryScreen(navController)
+        }
+        composable<Courses>{
+            CoursesScreen(navController)
+        }
+        composable<Detail>{
+            CourseDetailScreen(navController)
+        }
+        composable<Player>{
+            PlayersScreen(navController)
+        }
+        composable<ScoreCard>{
+            ScoreCardScreen(navController)
         }
 
-        composable<Detail> {
-            val args = it.toRoute<Detail>()
-            DetailScreen(name = args.name, age = args.age)
-        }
+
     }
 }
 
-@Composable
-fun HomeScreen(navController: NavHostController) {
-    TODO("Not yet implemented")
-}
-
+@Serializable
+object Summary
 
 @Serializable
-object Home
+object Courses
 
 @Serializable
-data class Detail(
-    val name : String?,
-    val age : Int
-)
+object Detail
+
+@Serializable
+object Player
+
+@Serializable
+object ScoreCard
+
+
