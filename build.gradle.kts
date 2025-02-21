@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
+
+    id("org.jetbrains.kotlin.jvm") version "1.9.22" apply false
+    alias(libs.plugins.ksp) apply false
+    id("androidx.room") version "2.6.1" apply false
 }
 
-// alias(libs.plugins.kotlin.android) apply false

@@ -1,10 +1,8 @@
 package com.pct.teamscorerev5.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.toRoute
 import com.pct.teamscorerev5.ui.screens.coursedetail.CourseDetailScreen
 import com.pct.teamscorerev5.ui.screens.courses.CoursesScreen
 import com.pct.teamscorerev5.ui.screens.playersetup.PlayersScreen
